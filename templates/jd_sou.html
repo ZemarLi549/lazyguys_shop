@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/static/MetronicShopUI/assets/LoginImg/lan.jpg">
+    <title>对比京东</title>
+<style type="text/css">
+    .container{
+        width: 100%;
+        height: auto;
+    }
+    .pic_div{
+        width: 19.5%;
+        height: 380px;
+        float: left;
+        margin-left: 2px;
+        margin-bottom: 2px;
+    }
+    .pic{
+        vertical-align: top;
+        display: block;
+        max-width: 100%;
+        max-height: 70%;
+    }
+</style>
+</head>
+
+<body>
+<a href="/" >返回首页</a>
+    <a href="jd_soutu?pics_num=1" class="shuaxin3"><button class="sousuo">搜索</button></a>
+    <input type="text" value="{{ request.session.jd_keyword }}" name="keyword" class="keyword" placeholder="请输入搜索关键字">
+<div class="container">
+{% if shangpin_info %}
+    {% for pic in shangpin_info %}
+        <div class="pic_div">
+            <img src="{{ pic.img_url }}" class="pic" alt="">
+            <p>
+                <a href="{{ pic.shangpin_url }}"><span>{{ pic.name }}</span></a>
+                <strong>{{ pic.price }}</strong>
+            </p>
+
+        </div>
+    {% endfor %}
+{% else %}
+    <h2 class="no">没有啦,不要再翻啦!</h2>
+{% endif %}
+</div>
+</body>
+<script type="text/javascript" src="/static/MetronicShopUI/assets/js/jQuery.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var page = parseInt($('.dijiye').find('span').text());
+        if (page>1){
+            $('.pre_page').show();
+        }else {
+            if(page<=0){page=1;$('.dijiye').text(page)}
+            $('.pre_page').hide();
+        }
+        $('.keyword').on('change',function () {
+            var keyword = $(this).val();
+            var new_href1 = $('.shuaxin1').attr('href')+'&keyword='+keyword;
+            var new_href2 = $('.shuaxin2').attr('href')+'&keyword='+keyword;
+            var new_href3 = $('.shuaxin3').attr('href')+'&keyword='+keyword;
+            $('.shuaxin1').attr('href',new_href1);
+            $('.shuaxin2').attr('href',new_href2);
+            $('.shuaxin3').attr('href',new_href3);
+            console.log($('.shuaxin1').attr('href'));
+            console.log($('.shuaxin2').attr('href'));
+            console.log($('.shuaxin3').attr('href'));
+        });
+        $('.keyword').keyup(function (e) {
+            if(e.keyCode==13){
+                $('.sousuo').trigger('click');
+                console.log($('.shuaxin3').attr('href'));
+            }
+        })
+    });
+
+</script>
+</html>

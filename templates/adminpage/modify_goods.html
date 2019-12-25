@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>修改商品信息</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="/static/MetronicShopUI/assets/LoginImg/lan.jpg">
+
+  <!-- Fonts START -->
+  <link href="/static/MetronicShopUI/assets/css/font-shop-productlist.css" rel="stylesheet" type="text/css">
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END -->
+
+  <!-- Page level plugin styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/css/jquert-ui.css" rel="stylesheet" type="text/css"><!-- for slider-range -->
+  <link href="/static/MetronicShopUI/assets/plugins/rateit/src/rateit.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="/static/MetronicShopUI/assets/pages/css/components.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="/static/MetronicShopUI/assets/corporate/css/custom.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/css/glassstyle.css" rel="stylesheet" type="text/css"/>
+  <!-- Theme styles END -->
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+    <!-- BEGIN STYLE CUSTOMIZER -->
+
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+
+    <!-- BEGIN TOP BAR -->
+
+    <!-- Header END -->
+
+
+
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <a href="to_admin_index">返回首页</a>
+            <h2>全部商品</h2>
+        </ul>
+
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SIDEBAR -->
+          <div class="col-md-6" style="margin-bottom: 50px;">
+            <div class="input-group">
+                      <input type="text" placeholder="Search again" class="form-control search_again">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary search_again_btn" type="submit">搜索</button>
+                      </span>
+                    </div>
+          </div>
+          <!-- END SIDEBAR -->
+          <!-- BEGIN CONTENT -->
+          <div class="row product-list" style="width: 878px;height: 1260px;">
+              <!-- PRODUCT ITEM START -->
+              {% for  item  in product_list %}
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                              <div class="product-item">
+                                  <input type="hidden" class="hide_id" value="{{ item.pk }}">
+                                  <div class="pi-img-wrapper">
+                                    <img src="{{ item.fields.goods_img|slice:':1'|last }}" class="img-responsive" style="height: 260px;width: 240px;" alt="{{ item.fields.name }}">
+                                    <div>
+                                      <a href="{{ item.fields.goods_img|slice:':1'|last }}" class="btn btn-default fancybox-button">放大图片</a>
+                                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看细节</a>
+                                    </div>
+                                  </div>
+                                  <h3><a href="to_modify_item?goods_id={{ item.pk }}">{{ item.fields.name }}</a></h3>
+                                  <div class="pi-price">{{ item.fields.current_price }}</div>
+                                  <a href="to_modify_item?goods_id={{ item.pk }}" class="btn btn-default add2cart">查看更多</a>
+                                  {% if item.fields.is_sale %}
+                                      <div class="sticker sticker-sale"></div>
+                                  {% endif %}
+                                  {% if item.fields.is_new %}
+                                      <div class="sticker sticker-new"></div>
+                                  {% endif %}
+                              </div>
+                      </div>
+                {% endfor %}
+
+            </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+      </div>
+    </div>
+
+    <!-- BEGIN BRANDS -->
+    <!-- BEGIN BRANDS -->
+
+    <!-- END FOOTER -->
+
+    <!-- BEGIN fast view of a product -->
+
+    <!-- END fast view of a product -->
+
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="/static/MetronicShopUI/assets/plugins/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/MetronicShopUI/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-session.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+
+    <script src="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="/static/MetronicShopUI/assets/plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="/static/MetronicShopUI/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/rateit/src/jquery.rateit.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jquery-ui.js" type="text/javascript"></script><!-- for slider-range -->
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/layout.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/formodify_goods.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();
+            Layout.initOWL();
+            Layout.initTouchspin();
+            Layout.initUniform();
+            Layout.initSliderRange();
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>我的收货地址</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="/static/MetronicShopUI/assets/LoginImg/lan.jpg">
+
+  <!-- Fonts START -->
+  <link href="/static/MetronicShopUI/assets/css/font-shop-item.css" rel="stylesheet" type="text/css">
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END -->
+
+  <!-- Page level plugin styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="/static/MetronicShopUI/assets/pages/css/components.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="/static/MetronicShopUI/assets/corporate/css/custom.css" rel="stylesheet">
+  <!-- Theme styles END -->
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+    <!-- BEGIN STYLE CUSTOMIZER -->
+
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+
+    <!-- BEGIN TOP BAR -->
+    {% include 'shop-header.html' %}
+    <!-- Header END -->
+
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">主页</a></li>
+            <li><a href="to_account">我的账户</a></li>
+            <li class="active">我的收货地址</li>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN CONTENT -->
+          <div class="col-md-12 col-sm-12">
+          <h1>我的收货地址>>></h1>
+
+            <!-- BEGIN CHECKOUT PAGE -->
+            <div class="panel-group checkout-page accordion scrollable" id="checkout-page">
+              <!-- END PAYMENT ADDRESS -->
+
+
+
+              <!-- BEGIN CONFIRM -->
+            {% for address in address_list %}
+              <div  class="panel panel-default shipping-address">
+                  <input type="hidden" value="{{ address.id }}" class="dizhiid">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#checkout-page" href="#shipping-address-content{{ address.id }}"
+                               class="accordion-toggle">
+                                收货地址(地址:{{ address.address }},收件人:{{ address.signer_name }})
+                            </a>
+                        </h2>
+                    </div>
+
+                        <div id="shipping-address-content{{ address.id }}" class="panel-collapse collapse ">
+                            <div class="panel-body row">
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="name-dd">收货人姓名<span class="require">*</span></label>
+                                            <input type="text"  name="name-dd" class="form-control name-dd" value="{{ address.signer_name }}" readonly>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="telephone-dd">收货人手机号 <span class="require">*</span></label>
+                                            <input type="text"  name="telephone-dd" class="telephone-dd form-control" readonly value="{{ address.signer_mobile }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">收货地址 <span class="require">*</span></label>
+                                            <input type="text"  name="address-dd" class="address-dd form-control" readonly value="{{ address.province }}{{ address.city }}{{ address.district }}{{ address.address }}">
+                                        </div>
+                                    </div>
+                            </div>
+                            <input type="button" class="btn btn-default pull-right margin-right-20 shanchu" value="删除此收货信息">
+                        </div>
+
+                </div>
+            {% endfor %}
+            <div id="shipping-address" class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#checkout-page" href="#shipping-address-content"
+                               class="accordion-toggle">
+                                点击新增收货信息
+                            </a>
+                        </h2>
+                    </div>
+
+                        <div id="shipping-address-content" class="panel-collapse collapse">
+                            <div class="panel-body row">
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="name-dd">收货人姓名<span class="require">*</span></label>
+                                            <input type="text" id="name-dd" name="name-dd" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="telephone-dd">收货人手机号 <span class="require">*</span></label>
+                                            <input type="text" id="telephone-dd" name="telephone-dd" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="country-dd">省 (直辖市)<span class="require">*</span></label>
+                                        <select class="form-control input-sm" id="province" name="province">
+                                            <option>--请选择省份--</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country-dd">市(区) <span class="require">*</span></label>
+                                        <select class="form-control input-sm" id="city" name="city">
+                                            <option>--请选择城市--</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country-dd">县(区) <span class="require">*</span></label>
+                                        <select class="form-control input-sm" id="town" name="town">
+                                            <option>--请选择县区--</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="add_detail">详细地址 <span class="require">*</span></label>
+                                        <input type="text" id="add_detail" name="add_detail" class="form-control " required>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="button" class="btn btn-primary  pull-right"
+                                            id="button-add-address" data-toggle="collapse"
+                                            data-parent="#checkout-page" data-target="#shipping-method-content" value="保存收货信息">
+
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+              <!-- END CONFIRM -->
+            </div>
+            <!-- END CHECKOUT PAGE -->
+          </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+      </div>
+    </div>
+
+    <!-- BEGIN STEPS -->
+    {% include 'shop-footer.html' %}
+    <!-- END FOOTER -->
+
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/MetronicShopUI/assets/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-form.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-session.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/Area.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="/static/MetronicShopUI/assets/plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="/static/MetronicShopUI/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/layout.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/pages/scripts/checkout.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/for-header.js" type="text/javascript"></script><!-- 自己写的 -->
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();
+            Layout.initOWL();
+            Layout.initTouchspin();
+            Layout.initUniform();
+            Checkout.init();
+            {#$('.shipping-address .accordion-toggle').trigger('click');//初始打开第一步#}
+            //删除地址
+            $('.shipping-address input[type=button]').click(function () {
+                var dizhiid = $(this).parents('.shipping-address').find('.dizhiid').val();
+                $.post('del_address',{dizhiid:dizhiid},function (data) {
+                    console.log('删除成功',dizhiid)
+                },'json');
+                $(this).parents('.shipping-address').remove();
+            });
+            //删除地址
+            //点击保存新增收货
+            $('#button-add-address').click(function () {
+                var add_detail = $('#add_detail').val();
+                var province = $('#province').val();
+                var city = $('#city').val();
+                var town = $('#town').val();
+                var signer_mobile = $('#telephone-dd').val();
+                var signer_name = $('#name-dd').val();
+
+                $.post('add_shippingaddr',{signer_name:signer_name,signer_mobile:signer_mobile,province:province,city:city,district:town,address:add_detail},function (data) {
+                    console.log('dfasd')
+                    if(data.status){
+                        console.log('添加地址成功!');
+                        window.location.href = 'to_myshippingaddress'
+                    }
+                },'json')
+            });
+            //点击保存新增收货
+            //省市县三级联动
+    var province= $('#province');
+
+    var city= $('#city');
+
+    var town= $('#town');
+    $.each(provinceList,function (index,sheng) {
+        province.append('<option>'+sheng.name+'</option>');
+    });
+
+    function clear(ele,val) {
+        ele.empty();
+        ele.append('<option>--请选择'+val+'--</option>')
+
+    }
+    function tianjia(ele,val) {
+        ele.append('<option>'+val+'</option>')
+    }
+    var pro_index = 0;
+    province.change(function () {
+        clear(city,'城市');
+        clear(town,'县区');
+        var province_val = $(this).val();
+        $.each(provinceList,function (i,pro) {
+            if (pro.name == province_val) {
+                pro_index = i;
+                $.each(pro.cityList, function (ind,item) {
+                    tianjia(city,item.name);
+                });
+                return false;
+            }
+        })
+    });
+    city.change(function () {
+        clear(town,'县区');
+        var city_val = $(this).val();
+        $.each( provinceList[pro_index].cityList,function (index,city) {
+            if (city_val == city.name) {
+                $.each(city.areaList,function (ind,item) {
+                    tianjia(town,item);
+                });
+                return false;
+            }
+        } )
+    })
+    //省市县三级联动
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

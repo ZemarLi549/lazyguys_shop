@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>常见问题解决方案</title>
+<style type="text/css">
+body{font-family:"微软雅黑";font-size:14px;}
+.conter{background-color:#fff;margin:30px 100px 30px 100px;border:1px solid #999;}
+.wenti{letter-spacing:5px;font-size:16px;font-weight:bold;padding:8px;cursor:pointer;}
+.wenti:hover{background-color:#F5FFFA;color:#000;}
+.huida div{display:none;background-color:#FFF8DC;letter-spacing:2px;line-height:20px;margin-left:10px;margin-right:10px;padding:8px;font-size:12px;}
+input.text, textarea.textarea{background:#fff;color:#333;border:1px solid #eee;border-top-color:#999;border-left-color:#999;padding:1px;vertical-align:middle;height:22px;line-height:22px;}
+input.button{background:#FFA54F repeat-x;padding-top:3px;border:1px solid #708090;width:80px;height:25px;font-size:10pt;cursor:hand;}
+</style>
+</head>
+<body style="background-color:#f6f6f6;">
+
+<form id="form1" runat="server">
+<div class="conter" >
+	<div class="q" >
+	  <div style="margin:20px">
+		<input id="txtStr" type="text" class="text" placeholder="输入问题的关键字" "  />
+		<input id="ss" type="button" class="button" value="搜索"/>
+	  </div>
+	  <div style=" margin:10px 0px 10px 20px">
+		快捷标签：<a name="w" style="font-size: 12px;color:#f01; text-decoration:none; cursor:pointer" >支付遇到问题怎么办?</a>&nbsp;&nbsp;&nbsp;
+		<a name="w" style="font-size: 12px;color:#f01; text-decoration:none; cursor:pointer" >支持手机支付吗?</a>&nbsp;&nbsp;&nbsp;
+		<a name="w" style="font-size: 12px;color:#f01; text-decoration:none; cursor:pointer" >忘记密码?</a>&nbsp;&nbsp;&nbsp;
+		<a name="w" style="font-size: 12px;color:#f01; text-decoration:none; cursor:pointer" >如何购买?</a>&nbsp;&nbsp;&nbsp;
+	  </div>
+		<div class="wenti">
+			<div id="q1" >1.懒人商城的团队成员都有谁?</div>
+		</div>
+		<div class="huida">
+			<div id="q11" > 高龙<br />
+							李增鑫<br />
+							王磊<br/>
+                            王雨涵
+
+			</div>
+		</div>
+		<div class="wenti">
+			<div id="q2" >2.懒人商城年龄最大的成员是谁?</div>
+		</div>
+		<div class="huida">
+			<div id="q21" > 王磊</div>
+		</div>
+		 <div class="wenti">
+			<div id="q3" >3.懒人商成主要经营什么商品?</div>
+		</div>
+		<div class="huida">
+			<div id="q31" > 服装<br />
+			<img name="img" src="/static/changjianwenti/images/001.jpg" style=" width:200px; height:300px; cursor:pointer" title="点击查看大图"><br />
+			帽子 <br />
+			腰带<br />
+			童装<br />
+
+		  </div>
+		</div>
+
+		<div class="wenti">
+			<div id="q4" >4.懒人商城的大拿是谁?</div>
+		</div>
+		<div class="huida">
+			<div id="q41" >
+				李增鑫
+			</div>
+		</div>
+
+        <div class="wenti">
+			<div id="q5" >5.支付遇到问题怎么办?</div>
+		</div>
+		<div class="huida">
+			<div id="q51" >
+				找李增鑫
+			</div>
+		</div>
+
+        <div class="wenti">
+			<div id="q6" >6.支持手机支付吗?</div>
+		</div>
+		<div class="huida">
+			<div id="q61" >
+				支持
+			</div>
+		</div>
+
+        <div class="wenti">
+			<div id="q7" >7.忘记密码?</div>
+		</div>
+		<div class="huida">
+			<div id="q71" >
+				找李增鑫
+			</div>
+		</div>
+
+        <div class="wenti">
+			<div id="q8" >8.如何购买?</div>
+		</div>
+		<div class="huida">
+			<div id="q81" >
+				找李增鑫
+			</div>
+		</div>
+        <a href="/">返回主页</a>
+
+	</div>
+</div>
+</form>
+
+</body>
+<script src="/static/MetronicShopUI/assets/plugins/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#q11").hide();
+	$("#q21").hide();
+	$("#q31").hide();
+	$("#q41").hide();
+	$(".wenti div").click(function() {
+		var id = $(this).attr("id");
+		$("#" + id + "1").toggle();
+	});
+
+	$("[name=w]").click(function() {
+		$("#txtStr").val($(this).text());
+		$("#ss").click();
+	});
+	$("[name=img]").click(function() {
+		if ($(this).css("width") == "200px") {
+			$(this).css('width', '');
+			$(this).css('height', '');
+			$(this).css('cursor', 'url(/static/changjianwenti/images/big.cur)');
+		} else {
+			$(this).css('width', '200px');
+			$(this).css('height', '300px');
+			$(this).css('cursor', 'url(/static/changjianwenti/images/small.cur)');
+		}
+
+	});
+
+});
+</script>
+</html>

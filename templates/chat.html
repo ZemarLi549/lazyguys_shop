@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>我的聊天室</title>
+    <link rel="stylesheet" href="/static/MetronicShopUI/assets/css/chat.css">
+    <script src="/static/MetronicShopUI/assets/js/jQuery.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-session.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-form.js" type="text/javascript"></script>
+    <script src="/static/Ckeditor/ckeditor/ckeditor/ckeditor.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="/static/MetronicShopUI/assets/js/chat.js" type="text/javascript"></script>
+</head>
+<body>
+<a href="/">返回商城首页</a>
+
+
+<div class="cct">
+
+    <div class="cct_l">
+
+        <div class="myinfo">
+
+            <form action="updateAvatar?nn={{ request.session.user_info.username }}" enctype="multipart/form-data" method="post" id="updateAvatar">
+                <input type="hidden" value="{{ request.session.user_info.username }}" class="myusername" name="myusername">
+                <input type="file" id="ava_update" name="ava_update" style="display: none" accept=".jpg,.png,.gif,.JPEG">
+                <label for="ava_update">
+                    <img src="{{ request.session.user_info.info }}" class="myavatar" title="点击修改头像" id="ava_update_img">
+                </label>
+            </form>
+            <span class="mynickname">{{ request.session.user_info.nickname }}</span>
+        </div>
+
+        <div class="search">
+            <input type="text" id="fuzzysearch" placeholder="查找好友...">
+            <ul class="serch_kw_list">
+
+            </ul>
+        </div>
+        <div class="myfriends">
+{#            点击加current类*******群加**#}
+            <div class="new_fr">好友请求</div>
+            <div class="new_fr_list">
+            {% if new_frs %}
+                {% for fr in new_frs %}
+                    <div class="friend_item">
+                        <input type="hidden" value="{{ fr.username }}" class="frusername">
+                        <img src="{{ fr.info }}" class="fr_avatar">
+                        <span class="fr_nickname" >{{ fr.nickname }}</span>
+                        <a href="javascript:;" class="jieshou">接受</a>
+                        <a href="javascript:;" class="jujue">拒绝</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>暂无好友请求!</p>
+            {% endif %}
+            </div>
+            <div class="chazhaouser" style="font-size: 16px;color: wheat;cursor: pointer">&lt;&lt;&lt;查找新朋友</div>
+            <div class="haoyou">好友列表</div>
+            <div class="haoyou_list">
+                {% for fr in frs %}
+                    <div class="friend_item">
+                        <input type="hidden" value="{{ fr.username }}" class="frusername">
+                        <img src="{{ fr.info }}" class="fr_avatar">
+                        <span class="fr_nickname" >{{ fr.nickname }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="xinjianqun" style="font-size: 16px;color: wheat;cursor: pointer">&lt;&lt;&lt;新建群聊</div>
+            <div class="qunls">群列表</div>
+            <div class="qun_list">
+            {% for qun in quns %}
+                <div class="qun_item ">
+                    <input type="hidden" value="{{ qun.qun_id }}" class="qun_id">
+                    <input type="hidden" value="{{ qun.qun_list }}" class="qun_list">
+                    <span class="qun_name" >{{ qun.qun_name }}</span>
+                </div>
+            {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{# 蒙层,点击好友昵称就displaynone#}
+    <div class="www">
+        <h2>LazyChat</h2>
+        <p style="text-align: center;">欢迎来到懒人聊天魔盒...</p>
+    </div>
+
+    <div class="cct_r">
+        <div class="chat_record">
+            <input type="hidden" class="qun_id_hd" value="1">
+            <p class="current_friend"></p>
+            <span title="删除" class="shanchutuichu" style="position:relative;display:none;left:0;top:-43px;font-size: 30px;background: #0E2231;cursor:pointer">&nbsp;X&nbsp;</span>
+
+            <div class="eachchat">
+
+
+{#                <div class="chat_item">#}
+{#                    <p class="sendtime"><span></span></p>#}
+{#                    <img src="" class="fr_pic">#}
+{#                    <span class="fr_chat"></span>#}
+{#                </div>#}
+{##}
+{#                <div class="chat_item">#}
+{#                    <p class="sendtime"><span>19/03/20 15:17</span></p>#}
+{#                    <img src="{{ request.session.user_info.info  }}" class="my_pic">#}
+{#                    <span class="my_chat">request.session.user_info.nickname</span>#}
+{#                </div>#}
+
+
+            </div>
+        </div>
+
+        <div class="chat_enter">
+            <textarea id="chattextarea" name="chattextarea" placeholder="Press Ctrl+Enter to send the message" maxlength="200"></textarea>
+            <button id="sendbtn">发送</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="this_qunlist">
+    <p style="width: 100%;height: 40px;font-size: 20px;color: white;line-height: 40px;margin: 0;">群成员列表</p>
+</div>
+<div class="add_new_user">
+    <p style="width: 100%;height: 40px;font-size: 20px;color: white;line-height: 40px;text-align: center; margin: 0;">查找新朋友</p>
+    <input type="text" class="chazhaoyonghu" style="width: 158px;" placeholder="请输入查找内容">
+    <a href="javascript:;" style="color: slategrey">查找</a>
+    <div class="search_list">
+    </div>
+</div>
+<div class="create_new_qun">
+    <p style="width: 100%;height: 40px;font-size: 20px;color: white;line-height: 40px;text-align: center; margin: 0;">创建新群聊</p>
+    <input type="text" class="qun_nickname" style="width: 158px;" placeholder="请输入群聊昵称">
+    <a href="javascript:;" style="color: slategrey">创建</a>
+
+</div>
+<div class="yaoqing_fr">
+    <p style="width: 100%;height: 40px;font-size: 20px;color: white;line-height: 40px;text-align: center; margin: 0;">邀请好友</p>
+    <div class="yao_haoyou_list">
+
+    </div>
+</div>
+</body>
+
+</html>
+
+
+

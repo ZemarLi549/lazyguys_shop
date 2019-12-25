@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>懒人商城| Lazyguys </title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="/static/MetronicShopUI/assets/LoginImg/lan.jpg">
+
+  <!-- Fonts START -->
+  <link href="static/MetronicShopUI/assets/css/font-shop-productlist.css" rel="stylesheet" type="text/css">
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END -->
+
+  <!-- Page level plugin styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="/static/MetronicShopUI/assets/pages/css/components.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="/static/MetronicShopUI/assets/corporate/css/custom.css" rel="stylesheet">
+  <!-- Theme styles END -->
+    <style type="text/css">
+        .touxiang_div{
+            width: 16%;height: 16%;background: green;margin-left: 1px;margin-bottom: 1px;float: left
+        }
+        .yema{
+            font-size: 16px;display: inline-block;
+        }
+        .avatar_bd{
+            width: 100%;
+            height: 100%;
+            display: block;
+            vertical-align: top;
+        }
+        .touxiang_div:hover{
+            border: 2px solid skyblue;
+        }
+        .fangda{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        .container_avatar_sm_active {
+            background: url("/static/MetronicShopUI/assets/register/imgs/loading.gif") no-repeat;
+            background-size: 100px 100px;
+        }
+    </style>
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+    <!-- BEGIN STYLE CUSTOMIZER -->
+
+
+    <!-- BEGIN TOP BAR -->
+    {% include 'shop-header.html' %}
+
+
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">主页</a></li>
+            <li><a href="to_account">我的账户</a></li>
+            <li class="active">编辑个人信息</li>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SIDEBAR -->
+          <div class="sidebar col-md-3 col-sm-3">
+            <ul class="list-group margin-bottom-25 sidebar-menu">
+              <li class="list-group-item clearfix"><a href="to_login"><i class="fa fa-angle-right"></i> 登录/注册</a></li>
+              <li class="list-group-item clearfix"><a href="to_standart"><i class="fa fa-angle-right"></i> 修改个人信息</a></li>
+              <li class="list-group-item clearfix"><a href="to_collect"><i class="fa fa-angle-right"></i> 我的收藏</a></li>
+              <li class="list-group-item clearfix"><a href="to_my_cart"><i class="fa fa-angle-right"></i> 我的购物车</a></li>
+              <li class="list-group-item clearfix"><a href="to_myorder"><i class="fa fa-angle-right"></i> 我的历史订单</a></li>
+              <li class="list-group-item clearfix"><a href="to_myshippingaddress"><i class="fa fa-angle-right"></i> 我的收货地址</a></li>
+              <li class="list-group-item clearfix"><a href="to_chat"><i class="fa fa-angle-right"></i>商城互动</a></li>
+            </ul>
+          </div>
+          <!-- END SIDEBAR -->
+
+
+          <div class="col-md-9 col-sm-7">
+            <h1 style="margin-top: -40px">修改个人信息</h1>
+                <div class="content-form-page">
+                  <form action="change_forms" method="post" name="form_account" class="form-horizontal form-without-legend" id="form_account" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"  >联系电话 <span class="require">*</span></label>
+                      <div class="col-lg-8">
+                        <input type="text" name="username"  class="form-control" value="{{ user.username }}" readonly>
+                          <p style="color: #666;font-size: smaller;margin-bottom: -10px">手机号为注册号,暂不支持修改</p>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="nn_update"  >昵称 <span class="require">*</span>
+                        </label>
+                      <div class="col-lg-8">
+                        <input type="text" id="nn_update" name="nn_update" class="form-control" minlength="2" maxlength="6" value="{{ user.nickname }}" >
+                          <p id="nn_tip" style="color: #666;font-size: smaller;margin-bottom: -10px">修改为2-6位中文或与字母组合的昵称</p>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"  for="pw_update1">密码 <span class="require">*</span></label>
+                      <div class="col-lg-8">
+                        <input type="password" id="pw_update1" name="pw_update1" class="form-control" value="{{ user.password }}"  >
+                          <p style="color: #666;font-size: smaller;margin-bottom: -10px">修改为6-10位数字与字母组合的密码</p>
+                      </div>
+
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"  for="pw_update2">确认密码 <span class="require">*</span></label>
+                      <div class="col-lg-8">
+                        <input type="password" id="pw_update2" name="pw_update2" class="form-control" value="{{ user.password }}" >
+                          <p style="color: #666;font-size: smaller;margin-bottom: -10px">请再输入一次密码,两次密码必须一致</p>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"  for="birth_update">出生日期</label>
+                      <div class="col-lg-8">
+                        <input type="date" id="birth_update" name="birth_update" class="form-control" value="{{ user.birthday }}" >
+                      </div>
+                    </div>
+                      <div class="form-group">
+                      <label class="col-lg-2 control-label" for="email_update" >Email地址</label>
+                      <div class="col-lg-8">
+                        <input type="text"  name="email_update" id="email_update" class="form-control" value="{{ user.email }}" >
+                          <p style="color: #666;font-size: smaller;margin-bottom: -10px">修改电子邮箱</p>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label" >性别</label>
+                      <div class="col-lg-8 checkbox-list">
+                        <label >
+                            {% if user.gender == '男' %}
+                                <input type="radio" value="男" name="sex" checked="checked"> 男生
+                               <input type="radio" value="女" name="sex" > 女生
+                            {% else %}
+                                <input type="radio" value="男" name="sex" > 男生
+                               <input type="radio" value="女" name="sex" checked="checked"> 女生
+                            {% endif %}
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <p style="cursor: pointer" class="sousuo_avatar_plus">&lt;&lt;&lt;搜索头像</p>
+                        <div class="avatars_container" style="display:none;width: 400px;height: 433px;position: absolute;left: -380px;bottom: -42px;">
+                            <input type="text" placeholder="请输入搜索关键字" value="" class="sousuo_avatar" style="margin-left: 80px;">
+                            <input type="button" class="sousuo_btn" value="搜索一下">
+                            <div style="width: 400px;height: 400px;margin-top: 10px;" class="container_avatar_sm">
+
+
+
+
+                            </div>
+                            <div class="yeye" style="width: 100%;height:40px;float:left;margin-top:-45px;display:none;text-align: center;">
+                                    <input type="button" class="yema pre_page" style="display: none" value="上一页">
+                                    <strong class="dijiye">第<input class="page_num" type="text" value="1" style="display: inline-block;width: 50px;">页</strong>
+                                    <input type="button" class="yema next_page" value="下一页">
+                                    <input type="button" class="yema xuanze_avatar" value="选中图片做头像!">
+
+                            </div>
+                        </div>
+                      <label class="col-lg-2 control-label" for="img_update" style="margin-left: 140px;">
+                        <img src="{{ user.info }}" id="ava_img" style=" display:block;width:100px;height: 100px;cursor: pointer;" alt="头像被王磊吃了!" title="点击图片修改图像">
+                      </label>
+                      <div class="col-lg-8">
+                        <p id="wrongtip_avatar_update" style="color: red;font-size: 20px;margin-left: 400px;"></p>
+                        <input type="file" id="img_update" name="img_update" accept=".png,.jpg,.jpeg,.JPEG" style="display: none">
+                        <p style="margin-top: 16px;margin-left: 100px;" class="help-block">选择不大于4M 的头像(格式:png,jpg,jpeg,gif)</p>
+                      </div>
+                    </div>
+                    <div>
+                        <input type="button" name="btn_updata" id="btn_updata"  style="height: 30px;width: 100px;display:inline-block;background: #e3e3e3;margin-left:530px;margin-top:-100px;color:#e6400c" value="确认修改" >
+                    </div>
+                  <p class="wrongtip_update" style="position:absolute;left: 156px;top: -7px;color: red;font-size: 24px;"></p>
+                  </form>
+            </div>
+          </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+      </div>
+    </div>
+    {% include 'shop-footer.html' %}
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/MetronicShopUI/assets/plugins/respond.min.js"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-session.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="/static/MetronicShopUI/assets/plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="/static/MetronicShopUI/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-form.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/info_update.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/layout.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/for-header.js" type="text/javascript"></script><!-- 自己写的 -->
+    <script type="text/javascript">
+        $(function() {
+            Layout.init();
+            Layout.initOWL();
+            Layout.initTouchspin();
+            Layout.initUniform();
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

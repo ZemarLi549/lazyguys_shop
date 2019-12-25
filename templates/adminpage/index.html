@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>懒人商城后台管理</title>
+	<link href="/static/admin/assets/css/index_icon.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/admin/assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="/static/admin/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="/static/admin/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/static/admin/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="/static/admin/assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='/static/admin/assets/css/index_family.css' rel='stylesheet' type='text/css' />
+    <link rel="shortcut icon" href="/static/MetronicShopUI/assets/LoginImg/lan.jpg">
+    <link rel="stylesheet" href="/static/admin/assets/js/Lightweight-Chart/cssCharts.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand waves-effect waves-dark" href="to_admin_index"><i class="large material-icons">track_changes</i> <strong>LazyShop</strong></a>
+
+		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>管理员</b> <i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </nav>
+		<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+<li><a href="#"><i class="fa fa-user fa-fw"></i>我的主页</a>
+</li>
+<li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+</li>
+<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
+</li>
+</ul>
+<ul id="dropdown2" class="dropdown-content w250">
+  <li>
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 min</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+</ul>
+<ul id="dropdown3" class="dropdown-content dropdown-tasks w250">
+<li>
+		<a href="#">
+			<div>
+				<p>
+					<strong>任务 1</strong>
+					<span class="pull-right text-muted">60% Complete</span>
+				</p>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+						<span class="sr-only">60% Complete (success)</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">
+			<div>
+				<p>
+					<strong>任务 2</strong>
+					<span class="pull-right text-muted">28% Complete</span>
+				</p>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
+						<span class="sr-only">28% Complete</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">
+			<div>
+				<p>
+					<strong>任务 3</strong>
+					<span class="pull-right text-muted">60% Complete</span>
+				</p>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+						<span class="sr-only">60% Complete (warning)</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">
+			<div>
+				<p>
+					<strong>任务 4</strong>
+					<span class="pull-right text-muted">85% Complete</span>
+				</p>
+				<div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+						<span class="sr-only">85% Complete (danger)</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li class="divider"></li>
+	<li>
+</ul>
+<ul id="dropdown4" class="dropdown-content dropdown-tasks w250 taskList">
+  <li>
+                                <div>
+                                    <strong>John Doe</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Today</em>
+                                    </span>
+                                </div>
+                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <p>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</p>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the...</p>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+</ul>
+	   <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="active-menu waves-effect waves-dark" href="index.html"><i class="fa fa-dashboard"></i> 商城总览</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI 模块</a>
+                    </li>
+					<li>
+                        <a href="to_modify_goods" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i>修改商品信息</a>
+                    </li>
+                    <li>
+                        <a href="to_order_center" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> 订单中心</a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;" class="waves-effect waves-dark"><i class="fa fa-table"></i> 表格中心</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="waves-effect waves-dark"><i class="fa fa-edit"></i> 用户中心</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+
+		<div id="page-wrapper">
+		  <div class="header">
+                        <h1 class="page-header">
+                            商城总览
+                        </h1>
+						<ol class="breadcrumb">
+					  <li><a href="to_admin_index">主页</a></li>
+					  <li><a href="#">总览</a></li>
+					  <li class="active">数据</li>
+					</ol>
+
+		</div>
+            <div id="page-inner">
+
+			<div class="dashboard-cards">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+						<div class="card horizontal cardIcon waves-effect waves-dark">
+						<div class="card-image red">
+						<i class="material-icons dp48">import_export</i>
+						</div>
+						<div class="card-stacked red">
+						<div class="card-content">
+						<h3>{{ zongjia }}</h3>
+						</div>
+						<div class="card-action">
+						<strong>销售总额(元)</strong>
+						</div>
+						</div>
+						</div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+						<div class="card horizontal cardIcon waves-effect waves-dark">
+						<div class="card-image orange">
+						<i class="material-icons dp48">shopping_cart</i>
+						</div>
+						<div class="card-stacked orange">
+						<div class="card-content">
+						<h3>{{ sale_num }}</h3>
+						</div>
+						<div class="card-action">
+						<strong>销售总量</strong>
+						</div>
+						</div>
+						</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+							<div class="card horizontal cardIcon waves-effect waves-dark">
+						<div class="card-image blue">
+						<i class="material-icons dp48">equalizer</i>
+						</div>
+						<div class="card-stacked blue">
+						<div class="card-content">
+						<h3>{{ products_num }}</h3>
+						</div>
+						<div class="card-action">
+						<strong>商品总量</strong>
+						</div>
+						</div>
+						</div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+					    <div class="card horizontal cardIcon waves-effect waves-dark">
+						<div class="card-image green">
+						<i class="material-icons assessment">supervisor_account</i>
+						</div>
+						<div class="card-stacked green">
+						<div class="card-content">
+						<h3>{{ jingshouru }}</h3>
+						</div>
+						<div class="card-action">
+						<strong>净收入</strong>
+						</div>
+						</div>
+						</div>
+                    </div>
+                </div>
+                <div class="row">
+					    <div class="col-xs-12 col-sm-12 col-md-5">
+						     <div class="row">
+									<div class="col-xs-12">
+									<div class="card">
+										<div class="card-image donutpad">
+										  <div id="morris-donut-chart1">
+                                              <input type="hidden" class="women_jing" value="{{ fenxiao_lirun.women_jing }}">
+                                              <input type="hidden" class="men_jing" value="{{ fenxiao_lirun.men_jing }}">
+                                              <input type="hidden" class="children_jing" value="{{ fenxiao_lirun.children_jing }}">
+                                          </div>
+										</div>
+										<div class="card-action">
+										  <b>利润对比(元)</b>
+										</div>
+									</div>
+								</div>
+							 </div>
+						</div><!--/.row-->
+						<div class="col-xs-12 col-sm-12 col-md-5">
+						     <div class="row">
+									<div class="col-xs-12">
+									<div class="card">
+										<div class="card-image donutpad">
+										  <div id="morris-donut-chart">
+                                              <input type="hidden" class="women_sale_num" value="{{ fenxiao_num.women_sale_num }}">
+                                              <input type="hidden" class="men_sale_num" value="{{ fenxiao_num.men_sale_num }}">
+                                              <input type="hidden" class="children_sale_num" value="{{ fenxiao_num.children_sale_num }}">
+                                          </div>
+										</div>
+										<div class="card-action">
+										  <b>销量对比(件)</b>
+										</div>
+									</div>
+								</div>
+							 </div>
+						</div><!--/.row-->
+
+                </div>
+                <div class="row">
+				    <div class="col-md-5">
+						<div class="card">
+						<div class="card-image">
+						 <div id="morris-line-chart">
+
+                         </div>
+						</div>
+						<div class="card-action">
+						  <b>近八个月订单量</b>
+						</div>
+						</div>
+
+					</div>
+                    <div class="col-md-8 col-sm-12 col-xs-12" style="width: 600px;" >
+	                    <div class="card" >
+                            <div class="card-action">
+                              <b>用户列表</b>
+                            </div>
+                            <div class="card-image">
+                                  <ul class="collection" style="height: 342px;overflow-y: auto">
+                                    {% for user in all_users %}
+                                        <li class="collection-item avatar">
+                                      <i class="material-icons circle green"><img src="{{ user.info }}" alt=""></i>
+                                      <span class="title">{{ user.username }}</span>
+                                            <p>昵称:<span>{{ user.nickname }}</span>,电子邮箱:<strong>{{ user.email }}</strong>,生日:<em>{{ user.birthday }}</em></p>
+                                            <p>总消费额:<strong>{{ user.total }}</strong></p>
+                                        {% if user.username == '18713585378' or user.username == '17695938928' or user.username == '18522079392' %}
+                                            <a href="javascript:;" class="secondary-content"><i class="material-icons">grade</i></a>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                  </ul>
+                             </div>
+                        </div>
+                    </div>
+				</div>
+                <div class="row">
+                    <div class="col-xs-12">
+						<div class="card">
+					<div class="card-image">
+					  <div id="morris-area-chart">
+                            <input type="hidden" value="{{ qianba_sale.yi }}" class="yi">
+                              <input type="hidden" value="{{ qianba_sale.er }}" class="er">
+                              <input type="hidden" value="{{ qianba_sale.san }}" class="san">
+                              <input type="hidden" value="{{ qianba_sale.si }}" class="si">
+                              <input type="hidden" value="{{ qianba_sale.wu }}" class="wu">
+                              <input type="hidden" value="{{ qianba_sale.liu }}" class="liu">
+                              <input type="hidden" value="{{ qianba_sale.qi }}" class="qi">
+                              <input type="hidden" value="{{ qianba_sale.ba }}" class="ba">
+                              <input type="hidden" value="{{ qianba_sale.mon_ba }}" class="mon_ba">
+                              <input type="hidden" value="{{ qianba_sale.mon_qi }}" class="mon_qi">
+                              <input type="hidden" value="{{ qianba_sale.mon_liu }}" class="mon_liu">
+                              <input type="hidden" value="{{ qianba_sale.mon_wu }}" class="mon_wu">
+                              <input type="hidden" value="{{ qianba_sale.mon_si }}" class="mon_si">
+                              <input type="hidden" value="{{ qianba_sale.mon_san }}" class="mon_san">
+                              <input type="hidden" value="{{ qianba_sale.mon_er }}" class="mon_er">
+                              <input type="hidden" value="{{ qianba_sale.mon_yi }}" class="mon_yi">
+                              <input type="hidden" value="{{ qianba_sale.yi_month_num }}" class="yi_month_num">
+                              <input type="hidden" value="{{ qianba_sale.er_month_num }}" class="er_month_num">
+                              <input type="hidden" value="{{ qianba_sale.san_month_num }}" class="san_month_num">
+                              <input type="hidden" value="{{ qianba_sale.si_month_num }}" class="si_month_num">
+                              <input type="hidden" value="{{ qianba_sale.wu_month_num }}" class="wu_month_num">
+                              <input type="hidden" value="{{ qianba_sale.liu_month_num }}" class="liu_month_num">
+                              <input type="hidden" value="{{ qianba_sale.qi_month_num }}" class="qi_month_num">
+                              <input type="hidden" value="{{ qianba_sale.ba_month_num }}" class="ba_month_num">
+                      </div>
+					</div>
+					<div class="card-action">
+					  <b>近八个月销售额</b>
+
+					</div>
+					</div>
+                    </div>
+
+                </div>
+
+            </div>
+				<!-- /. ROW  -->
+
+
+
+
+
+
+                <!-- /. ROW  -->
+			   <div class="fixed-action-btn horizontal click-to-toggle">
+    <a class="btn-floating btn-large red">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">track_changes</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+  </div>
+
+				<footer><p>lazyguys.cn<a href="/" target="_blank" title="懒人商城">商城主页</a></p>
+
+
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/admin/assets/js/jquery-1.10.2.js"></script>
+
+	<!-- Bootstrap Js -->
+    <script src="/static/admin/assets/js/bootstrap.min.js"></script>
+
+	<script src="/static/admin/assets/materialize/js/materialize.min.js"></script>
+
+    <!-- Metis Menu Js -->
+    <script src="/static/admin/assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="/static/admin/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/admin/assets/js/morris/morris.js"></script>
+
+
+	<script src="/static/admin/assets/js/easypiechart.js"></script>
+	<script src="/static/admin/assets/js/easypiechart-data.js"></script>
+
+	 <script src="/static/admin/assets/js/Lightweight-Chart/jquery.chart.js"></script>
+
+    <!-- Custom Js -->
+    <script src="/static/admin/assets/js/custom-scripts.js"></script>
+
+
+</body>
+
+</html>

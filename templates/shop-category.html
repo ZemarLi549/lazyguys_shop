@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/static/MetronicShopUI/assets/js/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- 谁被选中就给对应a标签添加个collapsed类(貌似无影响哈哈哈)其外li标签给个active类(变红),给个style:"display:block;"出现下拉菜单 -->
+            <ul class="list-group margin-bottom-25 sidebar-menu" style="height: 380px;overflow-y:scroll;">
+
+              <li class="list-group-item clearfix dropdown ">
+                <a href="javascript:void(0);">
+                  <i class="fa fa-angle-right"></i>
+                  女士专区
+
+                </a>
+                <ul class="dropdown-menu" >
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0); "  ><i class="fa fa-angle-right"></i> 鞋子 </a>
+                      <ul class="dropdown-menu" >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 休闲鞋 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=休闲鞋&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=休闲鞋&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=休闲鞋&c4=冠军"><i class="fa fa-angle-right"></i> 冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=休闲鞋&c4=耐克"><i class="fa fa-angle-right"></i> 耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=休闲鞋&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 靴子  </a>
+                          <ul class="dropdown-menu" >
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=靴子&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=靴子&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=靴子&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 高跟鞋  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=高跟鞋&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 运动鞋  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=运动鞋&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=运动鞋&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=运动鞋&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=运动鞋&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=运动鞋&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 服装 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 休闲风 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=休闲风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=休闲风&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=休闲风&c4=冠军"><i class="fa fa-angle-right"></i> 冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=休闲风&c4=耐克"><i class="fa fa-angle-right"></i> 耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=休闲风&c4=彪马"><i class="fa fa-angle-right"></i> 彪马</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=休闲风&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 商务风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=商务风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 运动风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=运动风&c4=阿迪达斯"><i class="fa fa-angle-right"></i>阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=运动风&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=运动风&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=运动风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=运动风&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=运动风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 夏季精品  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=夏季精品&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=夏季精品&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=夏季精品&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=夏季精品&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=夏季精品&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=夏季精品&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 冬季潮品  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=冬季潮品&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=冬季潮品&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=冬季潮品&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=冬季潮品&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=冬季潮品&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=冬季潮品&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 潮流风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=潮流风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=潮流风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=潮流风&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=潮流风&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=潮流风&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=潮流风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 春秋热卖  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=春秋热卖&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=春秋热卖&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=春秋热卖&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=春秋热卖&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=春秋热卖&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=春秋热卖&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 饰品 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 口罩 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=口罩&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 帽子  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=帽子&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 手套  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=手套&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 袜子  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=袜子&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="list-group-item clearfix dropdown ">
+                <a href="javascript:void(0);" >
+                  <i class="fa fa-angle-right"></i>
+                  儿童专区
+
+                </a>
+                <ul class="dropdown-menu"  >
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 鞋子 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 运动鞋 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=运动鞋&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=运动鞋&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=运动鞋&c4=耐克"><i class="fa fa-angle-right"></i> 耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=运动鞋&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 可爱风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=可爱风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=可爱风&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=可爱风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=可爱风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 休闲鞋  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=休闲鞋&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=休闲鞋&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=休闲鞋&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=休闲鞋&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 酷炫风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=酷炫风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=酷炫风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=酷炫风&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=酷炫风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 服装 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 休闲风 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=休闲风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=休闲风&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=休闲风&c4=耐克"><i class="fa fa-angle-right"></i> 耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=休闲风&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 冬季潮品  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=冬季潮品&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=冬季潮品&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=冬季潮品&c4=耐克"><i class="fa fa-angle-right"></i> 耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=冬季潮品&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 可爱风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=可爱风&c4=阿迪达斯"><i class="fa fa-angle-right"></i>阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=可爱风&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=可爱风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=可爱风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 夏季精品  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=夏季精品&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=夏季精品&c4=耐克"><i class="fa fa-angle-right"></i>安踏</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=夏季精品&c4=安踏"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=夏季精品&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 春秋热卖  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=春秋热卖&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=春秋热卖&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=春秋热卖&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=春秋热卖&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 潮流风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=潮流风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=潮流风&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=潮流风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=潮流风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 酷炫风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=酷炫风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=酷炫风&c4=耐克"><i class="fa fa-angle-right"></i>安踏</a></li>
+                              <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=酷炫风&c4=安踏"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=酷炫风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 饰品 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 口罩 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=口罩&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 帽子  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=帽子&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 手套  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=手套&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 袜子  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=袜子&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="list-group-item clearfix dropdown ">
+                <a href="javascript:void(0);" >
+                  <i class="fa fa-angle-right"></i>
+                  男士专区
+
+                </a>
+                <ul class="dropdown-menu"  >
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 鞋子 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 休闲鞋 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=休闲鞋&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=休闲鞋&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=休闲鞋&c4=冠军"><i class="fa fa-angle-right"></i> 冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=休闲鞋&c4=耐克"><i class="fa fa-angle-right"></i> 耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=休闲鞋&c4=花花公子"><i class="fa fa-angle-right"></i> 花花公子</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=休闲鞋&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 篮球鞋  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=篮球鞋&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=篮球鞋&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=篮球鞋&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=篮球鞋&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 皮鞋  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=皮鞋&c4=花花公子"><i class="fa fa-angle-right"></i>花花公子</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=皮鞋&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 运动鞋  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=运动鞋&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=运动鞋&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=运动鞋&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=运动鞋&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=运动鞋&c4=花花公子"><i class="fa fa-angle-right"></i>花花公子</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=运动鞋&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 服装 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 休闲风 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=休闲风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=休闲风&c4=安踏"><i class="fa fa-angle-right"></i> 安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=休闲风&c4=冠军"><i class="fa fa-angle-right"></i> 冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=休闲风&c4=耐克"><i class="fa fa-angle-right"></i> 耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=休闲风&c4=彪马"><i class="fa fa-angle-right"></i> 彪马</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=休闲风&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 商务风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=商务风&c4=花花公子"><i class="fa fa-angle-right"></i>花花公子</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=商务风&c4=飒拉"><i class="fa fa-angle-right"></i>飒拉</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=商务风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 运动风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=运动风&c4=阿迪达斯"><i class="fa fa-angle-right"></i>阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=运动风&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=运动风&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=运动风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=运动风&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=运动风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 夏季精品  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=夏季精品&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=夏季精品&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=夏季精品&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=夏季精品&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=夏季精品&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=夏季精品&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 冬季潮品  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=冬季潮品&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=冬季潮品&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=冬季潮品&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=冬季潮品&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=冬季潮品&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=冬季潮品&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 潮流风  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=潮流风&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=潮流风&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=潮流风&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=潮流风&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=潮流风&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=潮流风&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 春秋热卖  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=春秋热卖&c4=阿迪达斯"><i class="fa fa-angle-right"></i> 阿迪达斯</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=春秋热卖&c4=耐克"><i class="fa fa-angle-right"></i>耐克</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=春秋热卖&c4=冠军"><i class="fa fa-angle-right"></i>冠军</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=春秋热卖&c4=安踏"><i class="fa fa-angle-right"></i>安踏</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=春秋热卖&c4=彪马"><i class="fa fa-angle-right"></i>彪马</a></li>
+                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=春秋热卖&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 饰品 </a>
+                      <ul class="dropdown-menu"  >
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);"><i class="fa fa-angle-right"></i> 腰带 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=腰带&c4=其它品牌"><i class="fa fa-angle-right"></i> 其它品牌</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 帽子  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=帽子&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 手套  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=手套&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                          <li class="list-group-item dropdown clearfix">
+                          <a href="javascript:void(0);" ><i class="fa fa-angle-right"></i> 领带  </a>
+                          <ul class="dropdown-menu"  >
+                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=领带&c4=其它品牌"><i class="fa fa-angle-right"></i>其它品牌</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="list-group-item clearfix dropdown ">
+                <a href="javascript:void(0);" >
+                  <i class="fa fa-angle-right"></i>
+                  品牌专区
+
+                </a>
+                <ul class="dropdown-menu"  >
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?c1=&c2=&c3=&c4=阿迪达斯" ><i class="fa fa-angle-right"></i> 阿迪达斯 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?c1=&c2=&c3=&c4=耐克" ><i class="fa fa-angle-right"></i> 耐克 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?c1=&c2=&c3=&c4=安踏" ><i class="fa fa-angle-right"></i> 安踏 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?c1=&c2=&c3=&c4=花花公子" ><i class="fa fa-angle-right"></i> 花花公子 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?c1=&c2=&c3=&c4=冠军" ><i class="fa fa-angle-right"></i> 冠军 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?c1=&c2=&c3=&c4=彪马" ><i class="fa fa-angle-right"></i> 彪马 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?c1=&c2=&c3=&c4=飒拉" ><i class="fa fa-angle-right"></i> 飒拉 </a>
+                  </li>
+
+                </ul>
+              </li>
+              <li class="list-group-item clearfix dropdown ">
+                <a href="javascript:void(0);" >
+                  <i class="fa fa-angle-right"></i>
+                  新品专区
+
+                </a>
+                <ul class="dropdown-menu"  >
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?msg=新品服装" ><i class="fa fa-angle-right"></i> 新品服装 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?msg=新品鞋" ><i class="fa fa-angle-right"></i> 新品鞋 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?msg=新品饰品" ><i class="fa fa-angle-right"></i> 新品饰品 </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="list-group-item clearfix dropdown ">
+                <a href="javascript:void(0);" >
+                  <i class="fa fa-angle-right"></i>
+                  热卖专区
+
+                </a>
+                <ul class="dropdown-menu"  >
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?msg=热卖服装" ><i class="fa fa-angle-right"></i> 热卖服装 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?msg=热卖鞋" ><i class="fa fa-angle-right"></i> 热卖鞋 </a>
+                  </li>
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="to_shop_list?msg=热卖饰品" ><i class="fa fa-angle-right"></i> 热卖饰品 </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+
+</body>
+<script type="text/javascript">
+
+    $(function () {
+        //按下专区其他专区闭合,给个active变红(这块得用ul,不能用.list-group-item会冲突)
+        $('.list-group-item').click(function () {
+            $(this).children('ul').show();
+            $(this).siblings('.list-group-item').children('ul').hide() ;//闭合其他专区
+            $(this).addClass('active').siblings('.list-group-item').removeClass('active').find('.list-group-item').removeClass('active') ;
+        });
+        //按下专区其他专区闭合,给个active变红
+    })
+</script>
+</html>

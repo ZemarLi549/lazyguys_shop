@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>Checkout | Metronic Shop UI</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="/static/MetronicShopUI/assets/LoginImg/lan.jpg">
+
+  <!-- Fonts START -->
+  <link href="/static/MetronicShopUI/assets/css/font-shop-item.css" rel="stylesheet" type="text/css"> 
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->          
+  <link href="/static/MetronicShopUI/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END --> 
+   
+  <!-- Page level plugin styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="/static/MetronicShopUI/assets/pages/css/components.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="/static/MetronicShopUI/assets/corporate/css/custom.css" rel="stylesheet">
+  <!-- Theme styles END -->
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+    <!-- BEGIN STYLE CUSTOMIZER -->
+
+    <!-- END BEGIN STYLE CUSTOMIZER --> 
+
+    <!-- BEGIN TOP BAR -->
+    {% include 'shop-header.html' %}
+    <!-- Header END -->
+
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">主页</a></li>
+            <li><a href="to_account">我的账户</a></li>
+            <li class="active">结算</li>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN CONTENT -->
+          <div class="col-md-12 col-sm-12">
+            <h1>结算中>>></h1>
+            <!-- BEGIN CHECKOUT PAGE -->
+            <div class="panel-group checkout-page accordion scrollable" id="checkout-page">
+              <!-- END PAYMENT ADDRESS -->
+<form action="order_execute" id="order_form" method="post">
+              <!-- BEGIN SHIPPfING ADDRESS -->
+              <div id="shipping-address" class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#checkout-page" href="#shipping-address-content"
+                               class="accordion-toggle">
+                                第一步: 填写收货信息
+                            </a>
+                        </h2>
+                    </div>
+
+                        <div id="shipping-address-content" class="panel-collapse collapse">
+                            <div class="panel-body row">
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="name-dd">收货人姓名<span class="require">*</span></label>
+                                            <input type="text" id="name-dd" name="name-dd" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="telephone-dd">收货人手机号 <span class="require">*</span></label>
+                                            <input type="text" id="telephone-dd" name="telephone-dd" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="country-dd">省 (直辖市)<span class="require">*</span></label>
+                                        <select class="form-control input-sm" id="province" name="province">
+                                            <option>--请选择省份--</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country-dd">市(区) <span class="require">*</span></label>
+                                        <select class="form-control input-sm" id="city" name="city">
+                                            <option>--请选择城市--</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country-dd">县(区) <span class="require">*</span></label>
+                                        <select class="form-control input-sm" id="town" name="town">
+                                            <option>--请选择县区--</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="add_detail">详细地址 <span class="require">*</span></label>
+                                        <input type="text" id="add_detail" name="add_detail" class="form-control " required>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-12 changyong" style="width:300px;height:200px;margin-top: -120px;overflow-y: auto">
+                                    <p style="width: 100%;height: 30px;font-size: 20px;line-height: 30px;text-align: center;background: sandybrown">我的常用地址列表</p>
+                                    {% for address in address_list %}
+                                        <div class="form-group add_info" >
+                                            <p>收件人: <span class="xingming">{{ address.signer_name }}</span></p>
+                                            <p>收件人电话: <span class="dianhua">{{ address.signer_mobile }}</span></p>
+                                            <p>收件人地址:
+                                                <span class="sheng">{{ address.province }}</span>
+                                                <span class="shi">{{ address.city }}</span>
+                                                <span class="xian">{{ address.district }}</span>
+                                                <span class="xiangxi">{{ address.address }}</span>
+
+
+
+                                            </p>
+
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="button" class="btn btn-primary  pull-right"
+                                            id="button-shipping-address" data-toggle="collapse"
+                                            data-parent="#checkout-page" data-target="#shipping-method-content" value="继续下一步">
+
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+              <!-- END SHIPPING ADDRESS -->
+
+              <!-- BEGIN SHIPPING METHOD -->
+              <div id="shipping-method" class="panel panel-default">
+                <div class="panel-heading">
+                  <h2 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#checkout-page" href="#shipping-method-content" class="accordion-toggle">
+                      第二步: 快递类别
+                    </a>
+                  </h2>
+                </div>
+                <div id="shipping-method-content" class="panel-collapse collapse">
+                  <div class="panel-body row">
+                    <div class="col-md-12">
+                      <p>请选择一种或多种以下提供的快递公司(默认发京东)</p>
+                      <h4>快递公司列表</h4>
+
+                      <div class="radio-list">
+                            <label>
+                              <input type="checkbox" name="FlatShippingRate" value="京东快递" checked="checked"> 京东快递
+                            </label>
+                            <label>
+                              <input type="checkbox" name="FlatShippingRate" value="百世快递"> 百世快递
+                            </label>
+                            <label>
+                              <input type="checkbox" name="FlatShippingRate" value="圆通快递"> 圆通快递
+                            </label>
+                            <label>
+                              <input type="checkbox" name="FlatShippingRate" value="顺丰快递"> 顺丰快递
+                            </label>
+                            <label>
+                              <input type="checkbox" name="FlatShippingRate" value="中通快递"> 中通快递
+                            </label>
+                            <label>
+                              <input type="checkbox" name="FlatShippingRate" value="圆通快递"> 天天快递
+                            </label>
+
+                      </div>
+                      <div class="form-group">
+                        <label for="delivery-comments">附加要求或说明</label>
+                        <textarea id="delivery-comments"  rows="8" class="form-control" name="append_desc"></textarea>
+                      </div>
+
+                      <input type="button" class="btn btn-primary  pull-right"  id="button-shipping-method" data-toggle="collapse" data-parent="#checkout-page" data-target="#payment-method-content" value="继续下一步">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END SHIPPING METHOD -->
+
+              <!-- BEGIN PAYMENT METHOD -->
+              <div id="payment-method" class="panel panel-default">
+                <div class="panel-heading">
+                  <h2 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#checkout-page" href="#payment-method-content" class="accordion-toggle">
+                      第三步: 支付方式
+                    </a>
+                  </h2>
+                </div>
+                <div id="payment-method-content" class="panel-collapse collapse">
+                  <div class="panel-body row">
+                    <div class="col-md-12">
+                      <p>请为此订单选择一种支付方式(默认货到付款)</p>
+                      <div class="radio-list">
+                        <label>
+                          <input type="radio" name="CashOnDelivery" value="货到付款" checked="checked"> 货到付款
+                        </label>
+                        <label>
+                          <input type="radio" name="CashOnDelivery" value="支付宝支付"> 支付宝支付
+                        </label>
+{#                        <label>#}
+{#                          <input type="radio" name="CashOnDelivery" value="微信支付"> 微信支付#}
+{#                        </label>#}
+                      </div>
+                      <div class="form-group">
+                        <label for="delivery-payment-method">附加要求或说明</label>
+                        <textarea id="delivery-payment-method" name="delivery-payment-method" rows="8" class="form-control"></textarea>
+                      </div>
+                      <input class="btn btn-primary  pull-right" type="button" id="button-payment-method" data-toggle="collapse" data-parent="#checkout-page" data-target="#confirm-content" value="继续下一步">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END PAYMENT METHOD -->
+
+              <!-- BEGIN CONFIRM -->
+              <div id="confirm" class="panel panel-default">
+                <div class="panel-heading">
+                  <h2 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#checkout-page" href="#confirm-content" class="accordion-toggle">
+                      第四步: 确认订单
+                    </a>
+                  </h2>
+                </div>
+                <div id="confirm-content" class="panel-collapse collapse">
+                  <div class="panel-body row">
+                    <div class="col-md-12 clearfix">
+                      <div class="table-wrapper-responsive">
+                      <table>
+                        <thead>
+                            <tr>
+                                <th class="goods-page-image">图片</th>
+                                <th class="goods-page-description">商品</th>
+                                <th class="goods-page-quantity">数量</th>
+                                <th class="goods-page-price">单价</th>
+                                <th class="goods-page-total" colspan="2">单项总价</th>
+                            </tr>
+                        </thead>
+                      <tbody>
+                        {% for item in cart_goods %}
+                                <tr>
+                                    <input type="hidden" value="{{ item.goods_id }}">
+                                   <td class="goods-page-image">
+                                      <a href="to_shop_item?goods_id={{ item.goods_id }}"><img src="{{item.goods_img}}" alt="Berry Lace Dress"></a>
+                                    </td>
+                                    <td class="goods-page-description">
+                                      <h3><a href="to_shop_item?goods_id={{ item.goods_id }}">{{ item.goods_name }}</a></h3>
+                                      <p><strong>库存:<span>{{item.goods_stock}}</span></strong> -- 颜色: <span>{{ item.goods_color }}</span></p>
+                                      <em>尺寸种类: <span>{{ item.goods_size }}</span></em>
+                                    </td>
+                                    <td class="checkout-quantity" style="font-size: 20px;">{{ item.goods_num }}</td>
+                                    <td class="goods-page-price">
+                                      <strong><span>{{ item.goods_unitprice }}</span>¥</strong>
+                                    </td>
+                                    <td class="goods-page-total">
+                                      <strong><span>{{ item.goods_totalprice }}</span>¥</strong>
+                                    </td>
+
+                              </tr>
+                            {% endfor %}
+                      </tbody>
+                      </table>
+                      </div>
+                      <div class="checkout-total-block">
+                          <ul>
+                            <li>
+                              <em>优惠券</em>
+                              <strong class="price"><span>0.00</span>¥</strong>
+                            </li>
+                            <li class="shopping-total-price">
+                              <em>总价</em>
+                              <strong class="price"><span>{{ zongjia }}</span>¥</strong>
+                            </li>
+                          </ul>
+                      </div>
+                      <div class="clearfix"></div>
+                    <p class="wrongtip_order" style="font-size: 30px;color: red"></p>
+                      <input class="btn btn-primary pull-right" type="button" id="button-confirm" value="确认提交订单">
+                        <a href="to_index"><input type="button" class="btn btn-default pull-right margin-right-20" value="取消订单"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END CONFIRM -->
+          </form>
+            </div>
+
+            <!-- END CHECKOUT PAGE -->
+          </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+      </div>
+    </div>
+
+    <!-- BEGIN STEPS -->
+    {% include 'shop-footer.html' %}
+    <!-- END FOOTER -->
+
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.min.js"></script>  
+    <![endif]-->
+    <script src="/static/MetronicShopUI/assets/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-form.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-session.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/Area.js"  charset="UTF-8" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="/static/MetronicShopUI/assets/plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="/static/MetronicShopUI/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/layout.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/pages/scripts/checkout.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/for-header.js" type="text/javascript"></script><!-- 自己写的 -->
+    <script src="/static/MetronicShopUI/assets/js/for-shop-checkout.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();    
+            Layout.initOWL();
+            Layout.initTouchspin();
+            Layout.initUniform();
+            Checkout.init();
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

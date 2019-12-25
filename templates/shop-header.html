@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>懒人不懒网</title>
+</head>
+<body>
+<style type="text/css">
+    .xiaoxi_container{
+        width: 350px;
+        height: 46px;
+        position: absolute;
+        left: -83px;
+        top: 0;
+        display: none;
+    }
+    .xiaoxi_img{
+        float: left;
+        vertical-align: top;
+        width:38px ;
+        height: 38px;
+    }
+    .xiaoxi_ul {
+        padding-left: 12px;
+        width: 250px;
+        height: 46px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        float: left;
+        list-style-type: dot;
+        box-shadow: -4px -4px 10px gray;
+        border-radius: 14px!important;
+    }
+    .xiaoxi_ul>li{
+        padding-left: 0;
+        
+    }
+</style>
+<!-- BEGIN TOP BAR -->
+<div class="pre-header">
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN TOP BAR LEFT PART -->
+            <div class="col-md-6 col-sm-6 additional-shop-info">
+                <div class="xiaoxi_container">
+                    <img src="/static/MetronicShopUI/assets/corporate/img/icons/msg.png" title="点我关闭" class="xiaoxi_img">
+                    <ul class="xiaoxi_ul">
+                    </ul>
+                </div>
+		    </div>
+
+
+            <!-- END TOP BAR LEFT PART -->
+            <!-- BEGIN TOP BAR MENU -->
+            <div class="col-md-6 col-sm-6 additional-nav">
+                <ul class="list-unstyled list-inline pull-right">
+                    {% if request.session.user_info.info %}
+                        <li>Hi,{{ request.session.user_info.nickname }}</li>
+                        <li><a href="to_account"><img src="{{ request.session.user_info.info }}"
+                                                      style="width: 42px;height: 42px;border-radius: 50%!important;margin-top: -8px;"
+                                                      title="设置查看个人信息"/></a></li>
+                        <li><a href="javascript:;" class="tuichulogin">退出登录</a></li>
+                    {% else %}
+                        <li><a href="#"><img src="/static/users/imgs/avatars/weidenglu.jpg"
+                                             style="width: 42px;height: 42px;border-radius: 50%!important;margin-top: -8px;"
+                                             title="请先登录!" onclick="return alert('请先登录再查看个人账户')"/></a></li>
+                    {% endif %}
+                    <input type="hidden" value="{{ request.session.user_info.username }}">
+                    <li><a href="to_login">登录</a></li>
+                    <li><a href="to_shop_register">注册</a></li>
+                    <li><a href="{% url "social:begin" "weibo" %}" style="color: sandybrown"><img src="/static/MetronicShopUI/assets/pages/img/social/weibo.png" width="28" height="28" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+            <!-- END TOP BAR MENU -->
+        </div>
+    </div>
+</div>
+<!-- END TOP BAR -->
+
+<!-- BEGIN HEADER -->
+<div class="header">
+    <div class="container">
+        <a class="site-logo" href="/"><h1 style="text-indent: -9999px">懒人不懒网</h1><img
+                src="/static/MetronicShopUI/assets/LoginImg/icon.jpg" style="margin-top: -75px" alt="懒人不懒网">
+        </a>
+
+        <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+
+        <!-- BEGIN CART -->
+        <div class="top-cart-block">
+            <div class="top-cart-info">
+                <a href="javascript:void(0);" class="top-cart-info-count"><span>  </span> 项</a>
+            </div>
+            <i class="fa fa-shopping-cart"></i>
+
+            <div class="top-cart-content-wrapper">
+                <div class="top-cart-content">
+                    <ul class="scroller" style="height: 250px;">
+
+                    </ul>
+                    <div class="text-right">
+                        <a href="javascript:void(0);" class="btn-clear">清空购物车</a>
+                        <a href="####" class="btn btn-default">查看购物车</a>
+                        <a href="javascript:void(0);" class="btn btn-primary">直接结算</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--END CART -->
+
+        <!-- BEGIN NAVIGATION -->
+        <div class="header-navigation">
+            <ul>
+                <!-- BEGIN DROPDOWN MENU -->
+                <li class="dropdown dropdown-megamenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        儿童专区
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a href="to_shop_list?c1=儿童专区&c2=&c3=&c4="><p
+                                style="width: 100%;text-align: center;font-size: 20px;">儿童专区</p></a>
+                        <li>
+                            <div class="header-navigation-content">
+                                <div class="row">
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=&c4=">鞋子</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=运动鞋&c4=">运动鞋</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=可爱风&c4=">可爱风</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=休闲鞋&c4=">休闲鞋</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=鞋子&c3=酷炫风&c4=">酷炫风</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=儿童专区&c2=服装&c3=&c4=">服装</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=休闲风&c4=">休闲风</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=冬季潮品&c4=">冬季潮品</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=可爱风&c4=">可爱风</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=夏季精品&c4=">夏季精品</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=春秋热卖&c4=">春秋热卖</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=潮流风&c4=">潮流风</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=服装&c3=酷炫风&c4=">酷炫风</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=&c4=">饰品</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=帽子&c4=">帽子</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=手套&c4=">手套</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=袜子&c4=">袜子</a></li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=饰品&c3=口罩&c4=">口罩</a></li>
+                                        </ul>
+
+
+                                    </div>
+                                    <div class="col-md-12 nav-brands">
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=&c3=&c4=阿迪达斯"><img title="adidas"
+                                                                                                    alt="adidas"
+                                                                                                    src="/static/goods/grand_imgs/adidas.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=&c3=&c4=安踏"><img title="anta"
+                                                                                                  alt="anta"
+                                                                                                  src="/static/goods/grand_imgs/anta.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=&c3=&c4=冠军"><img title="champion"
+                                                                                                  alt="champion"
+                                                                                                  src="/static/goods/grand_imgs/champion.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=&c3=&c4=耐克"><img title="nike"
+                                                                                                  alt="nike"
+                                                                                                  src="/static/goods/grand_imgs/nike.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=儿童专区&c2=&c3=&c4=彪马"><img title="puma"
+                                                                                                  alt="puma"
+                                                                                                  src="/static/goods/grand_imgs/puma.jpg"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-megamenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        女士专区
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a href="to_shop_list?c1=女士专区&c2=&c3=&c4="><p
+                                style="width: 100%;text-align: center;font-size: 20px;">女士专区</p></a>
+                        <li>
+                            <div class="header-navigation-content">
+                                <div class="row">
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=&c4=">鞋子</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=休闲鞋&c4=">休闲鞋</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=高跟鞋&c4=">高跟鞋</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=靴子&c4=">靴子</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=鞋子&c3=运动鞋&c4=">运动鞋</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=女士专区&c2=服装&c3=&c4=">服装</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=休闲风&c4=">休闲风</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=商务风&c4=">商务风</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=运动风&c4=">运动风</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=夏季精品&c4=">夏季精品</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=冬季潮品&c4=">冬季潮品</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=潮流风&c4=">潮流风</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=服装&c3=春秋热卖&c4=">春秋热卖</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=女士专区&c2=饰品&c3=&c4=">饰品</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=袜子&c4=">袜子</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=帽子&c4=">帽子</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=手套&c4=">手套</a></li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=饰品&c3=口罩&c4=">口罩</a></li>
+                                        </ul>
+
+
+                                    </div>
+                                    <div class="col-md-12 nav-brands">
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=&c3=&c4=阿迪达斯"><img title="adidas"
+                                                                                                    alt="adidas"
+                                                                                                    src="/static/goods/grand_imgs/adidas.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=&c3=&c4=安踏"><img title="anta"
+                                                                                                  alt="anta"
+                                                                                                  src="/static/goods/grand_imgs/anta.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=&c3=&c4=冠军"><img title="champion"
+                                                                                                  alt="champion"
+                                                                                                  src="/static/goods/grand_imgs/champion.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=&c3=&c4=耐克"><img title="nike"
+                                                                                                  alt="nike"
+                                                                                                  src="/static/goods/grand_imgs/nike.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=女士专区&c2=&c3=&c4=彪马"><img title="puma"
+                                                                                                  alt="puma"
+                                                                                                  src="/static/goods/grand_imgs/puma.jpg"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-megamenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        男士专区
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a href="to_shop_list?c1=男士专区&c2=&c3=&c4="><p
+                                style="width: 100%;text-align: center;font-size: 20px;">男士专区</p></a>
+                        <li>
+                            <div class="header-navigation-content">
+                                <div class="row">
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=&c4=">鞋子</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=休闲鞋&c4=">休闲鞋</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=篮球鞋&c4=">篮球鞋</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=皮鞋&c4=">皮鞋</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=鞋子&c3=运动鞋&c4=">运动鞋</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=男士专区&c2=服装&c3=&c4=">服装</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=夏季精品&c4=">夏季精品</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=冬季潮品&c4=">冬季潮品</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=商务风&c4=">商务风</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=春秋热卖&c4=">春秋热卖</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=休闲风&c4=">休闲风</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=运动风&c4=">运动风</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=服装&c3=潮流风&c4=">潮流风</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4><a href="to_shop_list?c1=男士专区&c2=饰品&c3=&c4=">饰品</a></h4>
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=腰带&c4=">腰带</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=帽子&c4=">帽子</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=手套&c4=">手套</a></li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=饰品&c3=领带&c4=">领带</a></li>
+                                        </ul>
+
+
+                                    </div>
+                                    <div class="col-md-12 nav-brands">
+                                        <ul>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=&c3=&c4=阿迪达斯"><img title="adidas"
+                                                                                                    alt="adidas"
+                                                                                                    src="/static/goods/grand_imgs/adidas.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=&c3=&c4=安踏"><img title="anta"
+                                                                                                  alt="anta"
+                                                                                                  src="/static/goods/grand_imgs/anta.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=&c3=&c4=冠军"><img title="champion"
+                                                                                                  alt="champion"
+                                                                                                  src="/static/goods/grand_imgs/champion.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=&c3=&c4=耐克"><img title="nike"
+                                                                                                  alt="nike"
+                                                                                                  src="/static/goods/grand_imgs/nike.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=&c3=&c4=花花公子"><img title="playboy"
+                                                                                                    alt="playboy"
+                                                                                                    src="/static/goods/grand_imgs/playboy.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=&c3=&c4=彪马"><img title="puma"
+                                                                                                  alt="puma"
+                                                                                                  src="/static/goods/grand_imgs/puma.jpg"></a>
+                                            </li>
+                                            <li><a href="to_shop_list?c1=男士专区&c2=&c3=&c4=飒拉"><img title="zara"
+                                                                                                  alt="zara"
+                                                                                                  src="/static/goods/grand_imgs/zara.jpg"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown100 nav-catalogue">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        浏览最多
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a href="to_shop_list?views_count=浏览最多"><p
+                                style="width: 100%;text-align: center;font-size: 20px;">浏览最多</p></a>
+                        <li>
+                            <div class="header-navigation-content">
+                                <div class="row">
+                                    {% for item in request.session.sale_new_top4.views_count_list %}
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <div class="product-item sortsort">
+                                                <div class="pi-img-wrapper">
+                                                    <a href="javascript:;"><img
+                                                            src="{{ item.fields.goods_img|slice:':1'|last }}"
+                                                            class="img-responsive" style="height: 260px;width:100%"
+                                                            alt="{{ item.fields.name }}"></a>
+                                                </div>
+                                                <h3>
+                                                    <a href="to_shop_item?goods_id={{ item.pk }}">{{ item.fields.name }}</a>
+                                                </h3>
+                                                <div class="pi-price">{{ item.fields.current_price }}</div>
+                                                <a href="to_shop_item?goods_id={{ item.pk }}"
+                                                   class="btn btn-default add2cart">查看细节</a>
+                                                {% if item.fields.is_sale %}
+                                                    <div class="sticker sticker-sale"></div>
+                                                {% endif %}
+                                                {% if item.fields.is_new %}
+                                                    <div class="sticker sticker-new"></div>
+                                                {% endif %}
+                                                <p style="width:100%;height:40px;background:#44c46;position: relative;bottom: -50px;left: 0px;color: gray;text-align: center">
+                                                    浏览量:<span style="color: red">{{ item.fields.views_count }}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown100 nav-catalogue">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        本店热销
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a href="to_shop_list?sale_count=本店热销"><p
+                                style="width: 100%;text-align: center;font-size: 20px;">本店热销</p></a>
+                        <li>
+                            <div class="header-navigation-content">
+                                <div class="row">
+                                    {% for item in request.session.sale_new_top4.sale_count_list %}
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <div class="product-item sortsort">
+                                                <div class="pi-img-wrapper">
+                                                    <a href="javascript:;"><img
+                                                            src="{{ item.fields.goods_img|slice:':1'|last }}"
+                                                            style="height: 260px;width:100%;" class="img-responsive"
+                                                            alt="{{ item.fields.name }}"></a>
+                                                </div>
+                                                <h3>
+                                                    <a href="to_shop_item?goods_id={{ item.pk }}">{{ item.fields.name }}</a>
+                                                </h3>
+                                                <div class="pi-price">{{ item.fields.current_price }}</div>
+                                                <a href="to_shop_item?goods_id={{ item.pk }}"
+                                                   class="btn btn-default add2cart">查看细节</a>
+                                                {% if item.fields.is_sale %}
+                                                    <div class="sticker sticker-sale"></div>
+                                                {% endif %}
+                                                {% if item.fields.is_new %}
+                                                    <div class="sticker sticker-new"></div>
+                                                {% endif %}
+                                                <p style="width:100%;height:40px;background:#44c46;position: relative;bottom: -50px;left: 0px;text-align: center;color: gray">
+                                                    销售量:<span style="color: red">{{ item.fields.sale_count }}</span></p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a data-toggle="dropdown" data-target="#" href="javascript:;">其他</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="to_shop_list">随便逛逛</a></li>
+                        <li><a href="to_about_us">关于</a></li>
+                        <li><a href="to_connect_us">联系我们</a></li>
+                        <li><a href="to_shao_faq">常见问题</a></li>
+                        <li><a href="to_shop_privacy_policy">隐私政策</a></li>
+                        <li><a href="to_shop_terms_conditions_page">条款条例</a></li>
+                    </ul>
+                </li>
+                <!-- END DROPDOWN MENU -->
+                <!-- BEGIN TOP SEARCH -->
+                <li class="menu-search ">
+                    <span class="sep"></span>
+                    <i class="fa fa-search search-button"></i>
+                    <div class="search-box">
+                        <form action="to_search_result" method="post">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search" autocomplete="off" name="search_content"
+                                       class="form-control search_content">
+                                <ul class="serch_kw_list" style="position: absolute;top:30px;left: 0;list-style: none">
+                                </ul>
+                                <span class="input-group-btn">
+                      <button class="btn btn-primary " type="submit">搜索</button>
+                    </span>
+                            </div>
+
+                        </form>
+                        <p style="font-size: 16px;">热搜词:</p>
+                        {% for item in request.session.hotwords_list %}
+                            <p style="color: gray;float: left"><span class="resou">{{ item.fields.keywords }}</span>&nbsp;|&nbsp;
+                            </p>
+                        {% endfor %}
+                    </div>
+                </li>
+                <!-- END TOP SEARCH -->
+            </ul>
+        </div>
+        <!-- END NAVIGATION -->
+    </div>
+</div>
+<!-- Header END -->
+</body>
+</html>

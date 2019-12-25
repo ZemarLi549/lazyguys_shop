@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>修改单商品页面</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="/static/MetronicShopUI/assets/LoginImg/lan.jpg">
+
+  <!-- Fonts START -->
+  <link href="/static/admin/assets/css/index_icon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/admin/assets/materialize/css/materialize.min.css" media="screen,projection" />
+  <link href="/static/MetronicShopUI/assets/css/font-shop-item.css" rel="stylesheet" type="text/css">
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END -->
+
+  <!-- Page level plugin styles START -->
+  <link href="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/css/jquert-ui.css" rel="stylesheet" type="text/css"><!-- for slider-range -->
+  <link href="/static/MetronicShopUI/assets/plugins/rateit/src/rateit.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/css/glassstyle.css" rel="stylesheet" type="text/css"/>
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="/static/MetronicShopUI/assets/pages/css/components.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="/static/MetronicShopUI/assets/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="/static/MetronicShopUI/assets/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="/static/MetronicShopUI/assets/corporate/css/custom.css" rel="stylesheet">
+
+  <!-- Theme styles END -->
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+    <!-- BEGIN STYLE CUSTOMIZER -->
+
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+
+    <!-- BEGIN TOP BAR -->
+
+    <!-- Header END -->
+
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <a href="to_modify_goods">返回列表页</a>
+            <h2>商品细节</h2>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SIDEBAR -->
+          <div class="col-md-8 col-sm-12 col-xs-12" style="width: 600px;" >
+	                    <div class="card" >
+                            <div class="card-action">
+                              <b>收藏此商品的用户列表</b>
+                            </div>
+                            <div class="card-image">
+                                  <ul class="collection" style="height: 150px;overflow-y: auto">
+                                    {% for user in users_fav %}
+                                        <li class="collection-item avatar">
+                                      <i class="material-icons circle "><img src="{{ user.info }}" alt="gg"></i>
+                                      <span class="title">{{ user.username }}</span>
+                                            <p>昵称:<span>{{ user.nickname }}</span>,电子邮箱:<strong>{{ user.email }}</strong>,生日:<em>{{ user.birthday }}</em></p>
+                                        {% if user.username == '18713585378' or user.username == '17695938928' or user.username == '18522079392' %}
+                                            <a href="javascript:;" class="secondary-content"><i class="material-icons">grade</i></a>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                  </ul>
+                             </div>
+                        </div>
+                    </div>
+          <!-- END SIDEBAR -->
+        <div class="col-md-8 col-sm-12 col-xs-12" style="width: 600px;" >
+	                    <div class="card" >
+                            <div class="card-action">
+                              <b>添加此商品进购物车的用户列表</b>
+                            </div>
+                            <div class="card-image">
+                                  <ul class="collection" style="height: 150px;overflow-y: auto">
+                                    {% for user in users_cart %}
+                                        <li class="collection-item avatar">
+                                      <i class="material-icons circle green"><img src="{{ user.info }}" alt=""></i>
+                                      <span class="title">{{ user.username }}</span>
+                                            <p>昵称:<span>{{ user.nickname }}</span>,电子邮箱:<strong>{{ user.email }}</strong>,生日:<em>{{ user.birthday }}</em></p>
+                                        {% if user.username == '18713585378' or user.username == '17695938928' or user.username == '18522079392' %}
+                                            <a href="javascript:;" class="secondary-content"><i class="material-icons">grade</i></a>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                  </ul>
+                             </div>
+                        </div>
+                    </div>
+
+          <!-- BEGIN CONTENT -->
+            <form action="modify_good_info" method="post" id="form_update" enctype="multipart/form-data">
+                <div class="col-md-9 col-sm-7" style="margin-left: 50px;">
+            <div class="product-page">
+              <input type="hidden" class="hide_id" name="hide_id" value="{{ goods_info.pk }}">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="product-main-image">
+                    <img class="futu1" src="{{ goods_info.fields.goods_img|slice:':1'|last }}" alt="Cool green dress with red bell" class="img-responsive light-zoom" style="height: 450px;">
+                  </div>
+
+                  <div class="product-other-images">
+                    <a href="{{ goods_info.fields.goods_img|slice:':1'|last }}" class="fancybox-button" rel="photos-lib"><img class="futu1" alt="Berry Lace Dress" src="{{ goods_info.fields.goods_img|slice:':1'|last }}" style="height: 75px;"></a>
+
+                    <a href="{{ goods_info.fields.goods_img|slice:':2'|last }}" class="fancybox-button" rel="photos-lib"><img class="futu2" alt="Berry Lace Dress" src="{{ goods_info.fields.goods_img|slice:':2'|last }}" style="height: 75px;"></a>
+
+                    <a href="{{ goods_info.fields.goods_img|slice:':3'|last }}" class="fancybox-button" rel="photos-lib"><img class="futu3" alt="Berry Lace Dress" src="{{ goods_info.fields.goods_img|slice:':3'|last }}" style="height: 75px;"></a>
+                      <div>
+
+                          <label for="tu1">
+                              <p style="text-decoration: underline;">修改主图</p>
+                          </label>
+                          <input type="file" id="tu1" name="tu1" accept=".png,.jpg,.jpeg,.JPEG" style="display: none">
+                          <label for="tu2">
+                              <p style="text-decoration: underline;">修改二附图</p>
+                          </label>
+                          <input type="file" id="tu2" name="tu2" accept=".png,.jpg,.jpeg,.JPEG" style="display: none">
+                          <label for="tu3">
+                              <p style="text-decoration: underline;">修改三附图</p>
+                          </label>
+                          <input type="file" id="tu3" name="tu3" accept=".png,.jpg,.jpeg,.JPEG" style="display: none">
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <h1><input type="text" name="name" value="{{ goods_info.fields.name }}"></h1>
+                  <h6><input type="text" name="goods_brief" value="{{ goods_info.fields.goods_brief }}"></h6>
+                  <div class="price-availability-block clearfix">
+                    <div class="price">
+                      <strong><input type="text" name="current_price" value="{{ goods_info.fields.current_price }}"></strong>
+                      <em><input type="text" name="original_price" value="{{ goods_info.fields.original_price }}"></em>
+                    </div>
+                    <div class="availability">
+                        利润: <strong><input type="text" name="lirun" value="{{ goods_info.fields.lirun }}"></strong>
+                      库存量: <strong><input type="text" name="goods_stock" value="{{ goods_info.fields.goods_stock }}"></strong>
+                    </div>
+
+                  </div>
+                  <div class="description">
+                    <p><input type="text" name="goods_desc" value="{{ goods_info.fields.goods_desc }}"></p>
+                  </div>
+                  <div class="product-page-options">
+                    <div class="pull-left">
+                      <label class="control-label">尺寸种类:</label>
+
+                      <select class="form-control input-sm">
+                      {% for item in size_type_list %}
+                          <option>{{ item }}</option>
+                      {% endfor %}
+
+                      </select>
+                    </div>
+                    <div class="pull-left">
+                      <label class="control-label">颜色:</label>
+                      <select class="form-control input-sm">
+                        {% for item in color_list %}
+                          <option>{{ item }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="review">
+                    <input type="range" value="{{ goods_info.fields.haoping }}" step="0.25" id="backing4">
+                    <div class="rateit" data-rateit-backingfld="#backing4" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5">
+                    </div>
+
+                  </div>
+
+                <div style="position: absolute;top: 437px;left: -157px">
+                    <p style="width:200px;height:20px;color: gray;margin-top: 15px; text-align: center">浏览量:<span class="liulanliang" style="color: red"><input type="text" style="width: 30px;border: none" name="views_count" value="{{ goods_info.fields.views_count }}"></span></p>
+                    <p style="width:200px;height:20px;color: gray;margin-top: 15px;text-align: center">收藏量:<span class="shoucangliang" style="color: red"><input type="text"style="width: 30px;border: none" name="fav_num" value="{{ goods_info.fields.fav_num }}"></span></p>
+                    <p style="width:200px;height:20px;color: gray;margin-top: 15px;text-align: center">好评量:<span class="haopingliang" style="color: red"><input type="text" style="width: 30px;border: none" name="haoping" value="{{ goods_info.fields.haoping }}"></span></p>
+                    <p style="width:200px;height:20px;color: gray;margin-top: 15px;text-align: center">销售量:<span class="xiaoshouliang" style="color: red"><input type="text" style="width: 30px;border: none;" name="sale_count" value="{{ goods_info.fields.sale_count }}"></span></p>
+                </div>
+                <div style="width: 500px; position: absolute;top: 578px;left: -480px">
+                    <p style="width:500px;height:20px;color: gray;margin-top: 15px; text-align: center">一级分类(women,men,children):<span  style="color: red"><input type="text" style="width: 50px;border: none;" name="category_yi" value="{{ goods_info.fields.category_yi }}"></span></p>
+                    <p style="width:500px;height:20px;color: gray;margin-top: 15px;text-align: center">二级分类(shoes,clothes,decorations):<span  style="color: red"><input type="text"style="width: 50px;border: none" name="category_er" value="{{ goods_info.fields.category_er }}"></span></p>
+                    <p style="width:500px;height:20px;color: gray;margin-top: 15px;text-align: center">三级分类(chunqiu,xiaji,dongji,maozi,keai等)<span  style="color: red"><input type="text" style="width: 50px;border: none" name="category_san" value="{{ goods_info.fields.category_san }}"></span></p>
+                    <p style="width:500px;height:20px;color: gray;margin-top: 15px;text-align: center">四级分类(adidas,nike,anta,champion等)<span  style="color: red"><input type="text" style="width: 50px;border: none;" name="category_si" value="{{ goods_info.fields.category_si }}"></span></p>
+                </div>
+                <div style="position: absolute;top: 678px;left: -58px">
+                    <p style="width:300px;height:20px;color: gray;margin-top: 15px; text-align: center">是否新品:(Ture,False)<span  style="color: red"><input type="text" style="width: 50px;border: none" name="is_new" value="{{ goods_info.fields.is_new }}"></span></p>
+                    <p style="width:300px;height:20px;color: gray;margin-top: 15px;text-align: center">是否特价热卖:(Ture,False)<span  style="color: red"><input type="text"style="width: 50px;border: none" name="is_sale" value="{{ goods_info.fields.is_sale }}"></span></p>
+                </div>
+                </div>
+                <p id="wrongtip_update" style="color: red;font-size: 20px;margin-left: 400px;"></p>
+                <div class="product-page-content">
+                  <ul id="myTab" class="nav nav-tabs">
+                    <li><a href="#Description" data-toggle="tab">问答社区</a></li>
+                    <li><a href="#Information" data-toggle="tab">更多参数</a></li>
+                    <li class="active"><a href="#Reviews" data-toggle="tab">卖家秀</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content" >
+                    <div class="tab-pane fade" id="Description" >
+                        {% for item in wenda_list %}
+                            <span style="text-decoration: underline;cursor: pointer" class="del_tiwen">删除此条问题<input type="hidden" class="hide_wen_id" value="{{ item.pk }}"></span>
+                        <div class="wendada" >
+                            <ul style="margin-left: 0"><em style="color: sandybrown">{{ item.fields.nickname }}</em>:{{ item.fields.wen }}<strong><img src="/static/MetronicShopUI/assets/LoginImg/buzan.png" class="dianzan" alt="gg">赞<em>{{ item.fields.dianzan }}</em></strong><span style="font-size: 12px;">{{ item.fields.wen_time }}</span>
+                                
+                                {% for req in item.fields.da %}
+                                    <li>{{ req.nickname }}回复:{{ req.content }}<span>{{ req.da_time }}</span></li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="tab-pane fade" id="Information">
+                      <table class="datasheet">
+                        <tr>
+                          <th colspan="2">商品参数</th>
+                        </tr>
+                        <tr>
+                          <td class="datasheet-features-type">材质</td>
+                          <td><input type="text" name="parameter1" value="{{ goods_info.fields.parameter|slice:':1'|last }}"></td>
+                        </tr>
+                        <tr>
+                          <td class="datasheet-features-type">类型</td>
+                          <td><input type="text" name="parameter2" value="{{ goods_info.fields.parameter|slice:':2'|last }}"></td>
+                        </tr>
+                        <tr>
+                          <td class="datasheet-features-type">可选尺寸</td>
+                          <td><input type="text" name="parameter3" value="{{ goods_info.fields.parameter|slice:':3'|last }}"></td>
+                        </tr>
+                        <tr>
+                          <td class="datasheet-features-type">可选颜色</td>
+                          <td><input type="text" name="parameter4" value="{{ goods_info.fields.parameter|slice:':4'|last }}"></td>
+                        </tr>
+                        <tr>
+                          <td class="datasheet-features-type">其它</td>
+                          <td><input type="text" name="parameter5" value="{{ goods_info.fields.parameter|slice:':5'|last }}"></td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="tab-pane fade in active" id="Reviews" >
+                      <!--<p>There are no reviews for this product.</p>-->
+                    <div style="width:100%;height: 350px;overflow-y: auto" class="add_reviews">
+                    {% if reviews_list%}
+                        {% for item in reviews_list %}
+                            <span style="text-decoration: underline;cursor: pointer" class="del_review">删除此条评论<input type="hidden" class="hide_review_id" value="{{ item.cmts_id }}"></span>
+                          <div class="review-item clearfix">
+                            <div class="review-item-submitted">
+                              <strong>{{ item.cmts_nickname }}</strong>
+                              <em>{{ item.cmts_time }}</em>
+                              <div class="rateit" data-rateit-value="{{ item.cmts_star }}" data-rateit-ispreset="true" readonly="true" data-rateit-readonly="true"></div>
+                            </div>
+                            <div class="review-item-content">
+                                <p>
+                                    {% autoescape off%}
+                                        {{ item.cmts_content }}
+                                    {% endautoescape %}
+                                </p>
+                            </div>
+                          </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="review-item clearfix">
+                            <a href="javascript:;" class="tiaofabiao"><p>此商品暂无评论,赶紧去占楼吧!</p></a>
+                          </div>
+                    {% endif %}
+                    </div>
+                      <!-- BEGIN FORM-->
+                      <!-- END FORM-->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sticker sticker-sale"></div>
+              </div>
+
+            </div>
+          </div>
+                <input type="button" value="保存此商品所有修改" style="font-size: 20px;position: absolute;top:1283px;left: 792px;" class="baocunxiugai">
+                <input type="button" value="删除此商品" style="font-size: 20px;" class="shanchugood">
+                <input type="button" value="新增商品" style="font-size: 20px;" class="addgood">
+            </form>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+
+
+      </div>
+    </div>
+
+    <!-- BEGIN BRANDS -->
+
+    <!-- END FOOTER -->
+
+    <!-- BEGIN fast view of a product -->
+
+    <!-- END fast view of a product -->
+
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/MetronicShopUI/assets/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-form.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/jQuery-session.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/lightzoom.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="/static/MetronicShopUI/assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="/static/MetronicShopUI/assets/plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src="/static/MetronicShopUI/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="/static/MetronicShopUI/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/plugins/rateit/src/jquery.rateit.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/corporate/scripts/layout.js" type="text/javascript"></script>
+    <script src="/static/MetronicShopUI/assets/js/for_modify_item.js" type="text/javascript"></script><!-- 自己写的 -->
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();
+            Layout.initOWL();
+            Layout.initTouchspin();
+            Layout.initUniform();
+
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
